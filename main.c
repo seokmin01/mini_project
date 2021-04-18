@@ -62,7 +62,8 @@ int main(void) {
             scanf("%d", &no);
             if(no == 1)         findName(p, index);
             else if(no == 2)    findScore(p, index);
-            //else if(no == 3)    findPrice(p, index);
+            else if(no == 3)    findPrice(p, index);
+            else printf("취소됨!\n");
         }
 #ifdef DEBUG
         printf("Debug: 데이터 개수: %d, 데이터 인덱스: %d\n", count, index);
