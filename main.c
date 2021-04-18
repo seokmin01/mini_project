@@ -57,7 +57,12 @@ int main(void) {
             saveProduct(p, index);
         }
         else if (menu == 6){
-            //findname();
+            int no;
+            printf("검색기능을 선택하세요.\n이름 검색: 1\n별점 검색: 2\n가격 검색: 3\n");
+            scanf("%d", &no);
+            if(no == 1)         findName(p, index);
+            //else if(no == 2)    findScore(p, index);
+            //else if(no == 3)    findPrice(p, index);
         }
 #ifdef DEBUG
         printf("Debug: 데이터 개수: %d, 데이터 인덱스: %d\n", count, index);

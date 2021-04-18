@@ -9,7 +9,7 @@ int selectMenu(){
     printf("3. 수정\n");
     printf("4. 삭제\n");
     printf("5. 파일저장\n");
-    printf("6. 이름검색\n");
+    printf("6. 검색\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
@@ -103,4 +103,25 @@ void saveProduct(Product *p[], int count){
     }
     fclose(fp);
     printf("=> 저장됨!\n");
+}
+
+void findName(Product *p[], int count){
+    int scnt = 0;
+    char search[20];
+
+    printf("검색할 제품 이름은? ");
+    scanf("%s", search);
+    
+    printf("\n=====================================\n");
+    for(int i=0; i<count; i++){
+        if(p[i] == NULL) continue;
+        if(strstr(p[i]->name, search)){
+            printf("\n%d번 제품\n", i+1);
+            readProduct(*p[i]);
+            scnt++;
+        }
+    }
+    printf("\n=====================================\n");
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
 }
