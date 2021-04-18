@@ -10,6 +10,9 @@ int main(void) {
 
     Product *p[100];
     int index = 0; // 데이터 번호
+    
+    count = loadProduct(p);
+    index = count;
 
     while (1){
         menu = selectMenu();
@@ -61,5 +64,11 @@ int main(void) {
 #endif
     }
     printf("종료됨!\n");
+
+    for(int i = 0; i < index; i++){
+        if(p[i] == NULL) continue;
+        free(p[i]);
+    }
+
     return 0;
 }
