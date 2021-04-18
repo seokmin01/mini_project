@@ -61,7 +61,7 @@ int main(void) {
             printf("검색기능을 선택하세요.\n이름 검색: 1\n별점 검색: 2\n가격 검색: 3\n");
             scanf("%d", &no);
             if(no == 1)         findName(p, index);
-            //else if(no == 2)    findScore(p, index);
+            else if(no == 2)    findScore(p, index);
             //else if(no == 3)    findPrice(p, index);
         }
 #ifdef DEBUG

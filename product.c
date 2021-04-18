@@ -125,3 +125,24 @@ void findName(Product *p[], int count){
     if(scnt == 0) printf("=> 검색된 데이터 없음!");
     printf("\n");
 }
+
+void findScore(Product *p[], int count){
+    int scnt = 0;
+    int search;
+
+    printf("검색할 제품의 별점은? ");
+    scanf("%d", &search);
+    
+    printf("\n=====================================\n");
+    for(int i=0; i<count; i++){
+        if(p[i] == NULL) continue;
+        if(p[i]->score == search){
+            printf("\n%d번 제품\n", i+1);
+            readProduct(*p[i]);
+            scnt++;
+        }
+    }
+    printf("\n=====================================\n");
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
