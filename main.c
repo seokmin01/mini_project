@@ -54,7 +54,7 @@ int main(void) {
             }
         }
         else if (menu == 5){
-            //saveProduct();
+            saveProduct(p, index);
         }
         else if (menu == 6){
             //findname();
