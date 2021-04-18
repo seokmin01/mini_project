@@ -93,3 +93,14 @@ int loadProduct(Product *p[]){
     printf("=> 로딩 성공!\n");
     return i;
 }
+
+void saveProduct(Product *p[], int count){
+    FILE *fp;
+    fp = fopen("product.txt", "wt");
+    for(int i=0; i<count; i++){
+        if(p[i] == NULL) continue;
+        fprintf(fp, "%s\n%d %d %d %d\n", p[i]->name, p[i]->weight, p[i]->price, p[i]->score, p[i]->score_count);
+    }
+    fclose(fp);
+    printf("=> 저장됨!\n");
+}

@@ -22,5 +22,5 @@ void findScore(Product *p[], int count); // 별점으로 제품 검색
 void findPrice(Product *p[], int count); // 가격으로 제품 검색
 
 int loadProduct(Product *p[]); // File에서 데이터를 불러오는 함수
-int saveProduct(Product *p[], int count); // File에서 데이터를 저장하는 함수
+void saveProduct(Product *p[], int count); // File에서 데이터를 저장하는 함수
 
