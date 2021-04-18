@@ -70,3 +70,26 @@ int deleteProduct(Product *p){
     p->score_count = -1;
     return 1;
 }
+
+int loadProduct(Product *p[]){
+    int i;
+    char str[100];
+    char line[100];
+    FILE *fp;
+    fp = fopen("product.txt", "rt");
+    if(fp == NULL){
+        return 0;
+    }
+    for(i = 0; i<100; i++){
+        p[i] = (Product *)malloc(sizeof(Product));
+        fgets(str, 100, fp);
+        if(feof(fp)) break;
+        str[strlen(str)-1]='\0';
+        strcpy(p[i]->name, str);
+        fgets(line, 100, fp);
+        sscanf(line, "%d %d %d %d", &p[i]->weight, &p[i]->price, &p[i]->score, &p[i]->score_count);
+    }
+    fclose(fp);
+    printf("=> 로딩 성공!\n");
+    return i;
+}
